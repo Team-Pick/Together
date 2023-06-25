@@ -22,6 +22,14 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Set Git User
+        run: |
+          git config --global user.name "ldh3907"
+          git config --global user.email "ldh165163@gmail.com"
+          git remote set-url origin https://ldh3907:$GH_TOKEN@github.com/Team-Pick/Together-Test.git
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
       - name: Creating .npmrc
         run: |
           cat << EOF > "./.npmrc"
