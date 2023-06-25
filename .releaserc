@@ -28,11 +28,13 @@
       }
     ],
     "@semantic-release/release-notes-generator",
-    ["@semantic-release/changelog",
-    {
-      "changelogFile" : "CHANGELOG.md",
-      "changelogTitle" : "# Together 변경사항"
-    }],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md",
+        "changelogTitle": "# Together 변경사항"
+      }
+    ],
     "@semantic-release/npm",
     [
       "@semantic-release/git",
@@ -41,7 +43,6 @@
           "package.json"
         ]
       }
-    ],
-    "@semantic-release/github"
+    ]
   ]
 }
