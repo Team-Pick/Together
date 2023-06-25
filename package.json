@@ -1,7 +1,7 @@
 {
   "name": "@team-pick/together",
   "packageManager": "yarn@3.6.0",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "author": "임동현 <79711744+ldh3907@users.noreply.github.com>",
