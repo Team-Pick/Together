@@ -1,0 +1,36 @@
+{
+  "name": "@team-pick/together",
+  "packageManager": "yarn@3.6.0",
+  "version": "0.0.0-development",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "author": "임동현 <79711744+ldh3907@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:clean && npm run build:dist && npm run build:declaration",
+    "build:clean": "rm -rf ./dist",
+    "build:dist": "node esbuild.config.js",
+    "build:declaration": "yarn pnpify tsc",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Team-Pick/Together-Test.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.3",
+    "@semantic-release/npm": "^10.0.4",
+    "@semantic-release/release-notes-generator": "^11.0.3",
+    "@yarnpkg/esbuild-plugin-pnp": "^3.0.0-rc.15",
+    "@yarnpkg/pnpify": "^4.0.0-rc.46",
+    "esbuild": "^0.18.8",
+    "semantic-release": "^21.0.5"
+  }
+}
