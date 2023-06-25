@@ -23,6 +23,10 @@
           {
             "type": "write",
             "release": "patch"
+          },
+          {
+            "type": "chore",
+            "release": "patch"
           }
         ]
       }
