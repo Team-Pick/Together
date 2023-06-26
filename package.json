@@ -11,7 +11,8 @@
     "build:clean": "rm -rf ./dist",
     "build:dist": "node esbuild.config.js",
     "build:declaration": "yarn pnpify tsc",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -23,14 +24,27 @@
     "typings": "./dist/index.d.ts"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^9.0.3",
     "@semantic-release/npm": "^10.0.4",
     "@semantic-release/release-notes-generator": "^11.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "@typescript-eslint/typescript-estree": "^5.60.0",
     "@yarnpkg/esbuild-plugin-pnp": "^3.0.0-rc.15",
     "@yarnpkg/pnpify": "^4.0.0-rc.46",
     "esbuild": "^0.18.8",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "latest",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8",
     "semantic-release": "^21.0.5"
+  },
+  "dependencies": {
+    "typescript": "^5.1.3"
   }
 }
