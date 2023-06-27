@@ -1,5 +1,5 @@
 import { match } from "ts-pattern";
-import type { ButtonColorType, ButtonProps, ButtonSizeType } from "./type";
+import type { ButtonColorType, ButtonProps, ButtonSizeType } from "./types";
 import styled, { FlattenSimpleInterpolation, css } from "styled-components";
 
 const sizeStyle: Record<ButtonSizeType, number> = {
@@ -10,7 +10,6 @@ const colorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
     "Solid-Brand": css`
         background: #0068FF;
         color: #fff;
-        border-radius: 8%;
 
         &:hover{
             background: #2649FF
@@ -24,7 +23,6 @@ const colorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
         background: #FFFFFF;
         border: 1px solid #1C1C1E;
         color: #1C1C1E;
-        border-radius: 8%;
 
         &:hover{
             background: #F8FAFC;
@@ -41,7 +39,6 @@ const colorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
         background: #fff;
         border: 1px solid #0068FF;
         color: #0068FF;
-        border-radius: 8%;
 
         &:hover{
             border: 1px solid #2649FF;
@@ -56,7 +53,6 @@ const colorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
     "Solid-Grey": css`
         background: #1C1C1E;
         color: #fff;
-        border-radius: 8%;
 
         &:hover{
             background: #454545;
