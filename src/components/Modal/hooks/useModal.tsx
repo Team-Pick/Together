@@ -4,8 +4,8 @@ import Portal from "../../Portal";
 
 interface Props {
   modal: ReactNode;
-  closedCallback: VoidFunction;
-  openedCallback: VoidFunction;
+  closedCallback?: VoidFunction;
+  openedCallback?: VoidFunction;
 }
 
 const useModal = ({ modal, closedCallback, openedCallback }: Props) => {
@@ -13,12 +13,12 @@ const useModal = ({ modal, closedCallback, openedCallback }: Props) => {
 
   const open = useCallback(() => {
     setIsOpen(true);
-    openedCallback();
+    openedCallback?.();
   }, []);
 
   const close = useCallback(() => {
     setIsOpen(false);
-    closedCallback();
+    closedCallback?.();
   }, []);
 
   const renderModal = () => isOpen && isValidElement(modal) && <Portal selector="#modal">{modal}</Portal>;
