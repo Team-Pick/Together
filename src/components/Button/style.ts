@@ -24,8 +24,8 @@ const disableColorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
   "Solid-Grey": css`
     background: #e6e6e6;
     color: #a0a0a0;
-  `
-}
+  `,
+};
 const colorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
   "Solid-Brand": css`
     background: #0068ff;
@@ -89,11 +89,12 @@ const disableColorPattern = (color: ButtonColorType) =>
     .otherwise(() => disableColorStyle["Solid-Brand"]);
 
 export const ButtonStyle = styled.button<ButtonProps>`
-  border-radius: 8%;
+  border-radius: 8px;
+  font-size: 16px;
   border: none;
   width: ${({ size }) => `${sizePattern(size)}px`};
-  ${({ color, disable }) => disable ? disableColorPattern(color) : colorPattern(color)};
+  ${({ color, disable }) => (disable ? disableColorPattern(color) : colorPattern(color))};
   height: ${({ height }) => `${height}px`};
   outline: none;
-  cursor: ${({disable}) => disable ? "not-allowed" : "pointer"};
+  cursor: ${({ disable }) => (disable ? "not-allowed" : "pointer")};
 `;
