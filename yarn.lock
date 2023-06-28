@@ -3629,7 +3629,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addons@npm:7.0.24":
+"@storybook/addons@npm:7.0.24, @storybook/addons@npm:^7.0.0":
   version: 7.0.24
   resolution: "@storybook/addons@npm:7.0.24"
   dependencies:
@@ -3643,7 +3643,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/api@npm:7.0.24":
+"@storybook/api@npm:7.0.24, @storybook/api@npm:^7.0.0":
   version: 7.0.24
   resolution: "@storybook/api@npm:7.0.24"
   dependencies:
@@ -3897,7 +3897,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/components@npm:7.0.24":
+"@storybook/components@npm:7.0.24, @storybook/components@npm:^7.0.0":
   version: 7.0.24
   resolution: "@storybook/components@npm:7.0.24"
   dependencies:
@@ -3955,7 +3955,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core-events@npm:7.0.24":
+"@storybook/core-events@npm:7.0.24, @storybook/core-events@npm:^7.0.0":
   version: 7.0.24
   resolution: "@storybook/core-events@npm:7.0.24"
   checksum: 1bf563ed16551acf7caee56c5be5a47f67612b13ad1e97bb23cdd3f337a2fc82a0c0160421f02f254dba7d7bfc641c6aa36b534903ffca9afb2ec67c01870845
@@ -4371,7 +4371,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/theming@npm:7.0.24":
+"@storybook/theming@npm:7.0.24, @storybook/theming@npm:^7.0.0, @storybook/theming@npm:^7.0.24":
   version: 7.0.24
   resolution: "@storybook/theming@npm:7.0.24"
   dependencies:
@@ -4429,6 +4429,7 @@ __metadata:
     "@storybook/react": ^7.0.24
     "@storybook/react-webpack5": ^7.0.24
     "@storybook/testing-library": ^0.0.14-next.2
+    "@storybook/theming": ^7.0.24
     "@types/react": ^18.2.14
     "@types/react-dom": ^18.2.6
     "@types/styled-components": ^5.1.26
@@ -4452,6 +4453,7 @@ __metadata:
     react-is: ^18.2.0
     semantic-release: ^21.0.5
     storybook: ^7.0.24
+    storybook-dark-mode: ^3.0.0
     styled-components: 5.3.9
     styled-jsx: ^5.1.2
     ts-pattern: ^5.0.1
@@ -14051,6 +14053,30 @@ __metadata:
   version: 2.14.2
   resolution: "store2@npm:2.14.2"
   checksum: 6f270fc5bab99b63f45fcc7bd8b99c2714b4adf880f557ed7ffb5ed3987131251165bccde425a00928aaf044870aee79ddeef548576d093c68703ed2edec45d7
+  languageName: node
+  linkType: hard
+
+"storybook-dark-mode@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "storybook-dark-mode@npm:3.0.0"
+  dependencies:
+    "@storybook/addons": ^7.0.0
+    "@storybook/api": ^7.0.0
+    "@storybook/components": ^7.0.0
+    "@storybook/core-events": ^7.0.0
+    "@storybook/global": ^5.0.0
+    "@storybook/theming": ^7.0.0
+    fast-deep-equal: ^3.1.3
+    memoizerific: ^1.11.3
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: a66b7d52e303cc71ab603e7fb02bab39c56fdffc6428c7977136b53e8da9b47279bee06957f642ac2812a548076ab6a76657cbb3e31a5cee1c782c56810a2e93
   languageName: node
   linkType: hard
 

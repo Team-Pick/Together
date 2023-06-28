@@ -7,6 +7,7 @@ const config: StorybookConfig = {
     path.dirname(require.resolve(path.join("@storybook/addon-links", "package.json"))),
     path.dirname(require.resolve(path.join("@storybook/addon-essentials", "package.json"))),
     path.dirname(require.resolve(path.join("@storybook/addon-interactions", "package.json"))),
+    "storybook-dark-mode",
   ],
   framework: {
     name: path.dirname(require.resolve(path.join("@storybook/react-webpack5", "package.json"))),
