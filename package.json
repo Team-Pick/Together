@@ -12,7 +12,9 @@
     "build:dist": "node esbuild.config.js",
     "build:declaration": "yarn pnpify tsc",
     "semantic-release": "semantic-release",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,10 @@
     "typings": "./dist/index.d.ts"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
     "@semantic-release/changelog": "^6.0.3",
@@ -31,6 +37,13 @@
     "@semantic-release/github": "^9.0.3",
     "@semantic-release/npm": "^10.0.4",
     "@semantic-release/release-notes-generator": "^11.0.3",
+    "@storybook/addon-essentials": "^7.0.24",
+    "@storybook/addon-interactions": "^7.0.24",
+    "@storybook/addon-links": "^7.0.24",
+    "@storybook/blocks": "^7.0.24",
+    "@storybook/react": "^7.0.24",
+    "@storybook/react-webpack5": "^7.0.24",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@types/styled-components": "^5.1.26",
@@ -39,17 +52,24 @@
     "@typescript-eslint/typescript-estree": "^5.60.0",
     "@yarnpkg/esbuild-plugin-pnp": "^3.0.0-rc.15",
     "@yarnpkg/pnpify": "^4.0.0-rc.46",
+    "babel-loader": "^9.1.2",
+    "core-js": "^3.31.0",
     "esbuild": "^0.18.8",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "latest",
+    "eslint-plugin-storybook": "^0.6.12",
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
-    "semantic-release": "^21.0.5"
+    "prop-types": "^15.8.1",
+    "semantic-release": "^21.0.5",
+    "storybook": "^7.0.24",
+    "styled-jsx": "^5.1.2"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
     "styled-components": "5.3.9",
     "ts-pattern": "^5.0.1",
     "typescript": "^5.1.3"

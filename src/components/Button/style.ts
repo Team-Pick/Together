@@ -3,9 +3,29 @@ import type { ButtonColorType, ButtonProps, ButtonSizeType } from "./types";
 import styled, { FlattenSimpleInterpolation, css } from "styled-components";
 
 const sizeStyle: Record<ButtonSizeType, number> = {
-  small: 160,
-  large: 66,
+  small: 66,
+  large: 160,
 };
+const disableColorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
+  "Solid-Brand": css`
+    background: #d5e2ec;
+    color: #8da6b8;
+  `,
+  "Line-Grey": css`
+    background: #e6e6e6;
+    border: 1px solid #e6e6e6;
+    color: #a0a0a0;
+  `,
+  "Line-Brand": css`
+    background: #ffffff;
+    color: #8da6b8;
+    border: 1px solid #8da6b8;
+  `,
+  "Solid-Grey": css`
+    background: #e6e6e6;
+    color: #a0a0a0;
+  `
+}
 const colorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
   "Solid-Brand": css`
     background: #0068ff;
@@ -13,10 +33,6 @@ const colorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
 
     &:hover {
       background: #2649ff;
-    }
-    &:disabled {
-      background: #d5e2ec;
-      color: #8da6b8;
     }
   `,
   "Line-Grey": css`
@@ -29,11 +45,6 @@ const colorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
       border: 1px solid #454545;
       color: #454545;
     }
-    &:disabled {
-      background: #e6e6e6;
-      border: 1px solid #e6e6e6;
-      color: #a0a0a0;
-    }
   `,
   "Line-Brand": css`
     background: #fff;
@@ -44,11 +55,6 @@ const colorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
       border: 1px solid #2649ff;
       background: #f3feff;
     }
-    &:disabled {
-      background: #ffffff;
-      color: #8da6b8;
-      border: 1px solid #8da6b8;
-    }
   `,
   "Solid-Grey": css`
     background: #1c1c1e;
@@ -56,10 +62,6 @@ const colorStyle: Record<ButtonColorType, FlattenSimpleInterpolation> = {
 
     &:hover {
       background: #454545;
-    }
-    &:disabled {
-      background: #e6e6e6;
-      color: #a0a0a0;
     }
   `,
 };
@@ -78,9 +80,20 @@ const colorPattern = (color: ButtonColorType) =>
     .with("Solid-Grey", (color) => colorStyle[color])
     .otherwise(() => colorStyle["Solid-Brand"]);
 
+const disableColorPattern = (color: ButtonColorType) =>
+  match<ButtonColorType, FlattenSimpleInterpolation>(color)
+    .with("Line-Brand", (color) => disableColorStyle[color])
+    .with("Line-Grey", (color) => disableColorStyle[color])
+    .with("Solid-Brand", (color) => disableColorStyle[color])
+    .with("Solid-Grey", (color) => disableColorStyle[color])
+    .otherwise(() => disableColorStyle["Solid-Brand"]);
+
 export const ButtonStyle = styled.button<ButtonProps>`
   border-radius: 8%;
-  ${({ size }) => `${sizePattern(size)}px`}
-  ${({ color }) => colorPattern(color)}
-    ${({ height }) => `${height}px`}
+  border: none;
+  width: ${({ size }) => `${sizePattern(size)}px`};
+  ${({ color, disable }) => disable ? disableColorPattern(color) : colorPattern(color)};
+  height: ${({ height }) => `${height}px`};
+  outline: none;
+  cursor: ${({disable}) => disable ? "not-allowed" : "pointer"};
 `;
