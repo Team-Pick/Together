@@ -1,3 +1,2 @@
-export const func = () => {
-  return "hello world";
-};
+export * from "./components";
+export * from "./hooks";
