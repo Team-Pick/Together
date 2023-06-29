@@ -1,9 +1,16 @@
 import React from "react";
-import { ModalButtonsProps, ModalContentProps, ModalProps, ModalTitleProps } from "./types";
+import { ModalButtonsProps, ModalContentProps, ModalIcon, ModalProps, ModalTitleProps } from "./types";
 import * as S from "./style";
+import { usePreventScroll } from "../../hooks/usePreventScroll";
 
-const Modal = ({ children, style }: ModalProps) => {
+const ModalContainer = ({ children, style }: ModalProps) => {
+  usePreventScroll();
+
   return <S.Container style={style}>{children}</S.Container>;
+};
+
+const Icon = ({ children, style }: ModalIcon) => {
+  return <S.Icon style={style}>{children}</S.Icon>;
 };
 
 const Title = ({ children, style }: ModalTitleProps) => {
@@ -18,4 +25,4 @@ const Buttons = ({ children, style }: ModalButtonsProps) => {
   return <S.ButtonsContainer style={style}>{children}</S.ButtonsContainer>;
 };
 
-export default Object.assign(Modal, { Title, Content, Buttons });
+export const Modal = Object.assign(ModalContainer, { Icon, Title, Content, Buttons });

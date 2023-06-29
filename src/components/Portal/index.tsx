@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { PortalProps } from "./types";
 
-const Portal = ({ children, selector }: PortalProps) => {
+export const Portal = ({ children, selector }: PortalProps) => {
   if (!children) {
     throw new Error("children are required");
   }
@@ -10,5 +10,3 @@ const Portal = ({ children, selector }: PortalProps) => {
 
   return selectedDOM ? ReactDOM.createPortal(children, selectedDOM) : null;
 };
-
-export default Portal;

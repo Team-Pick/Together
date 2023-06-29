@@ -55,7 +55,7 @@
     "@yarnpkg/pnpify": "^4.0.0-rc.46",
     "babel-loader": "^9.1.2",
     "core-js": "^3.31.0",
-    "esbuild": "^0.18.8",
+    "esbuild": "^0.18.10",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "latest",

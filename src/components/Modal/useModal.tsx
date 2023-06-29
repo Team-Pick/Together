@@ -1,14 +1,13 @@
 import React from "react";
 import { useState, ReactNode, useCallback, isValidElement } from "react";
-import Portal from "../../Portal";
+import { Portal } from "../Portal";
 
 interface Props {
-  modal: ReactNode;
   closedCallback?: VoidFunction;
   openedCallback?: VoidFunction;
 }
 
-const useModal = ({ modal, closedCallback, openedCallback }: Props) => {
+export const useModal = ({ closedCallback, openedCallback }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const open = useCallback(() => {
@@ -21,9 +20,14 @@ const useModal = ({ modal, closedCallback, openedCallback }: Props) => {
     closedCallback?.();
   }, []);
 
-  const renderModal = () => isOpen && isValidElement(modal) && <Portal selector="#modal">{modal}</Portal>;
+  const renderModal = useCallback(
+    (modal: ReactNode) => {
+      if (isOpen && isValidElement(modal)) {
+        return <Portal selector="#modal">{modal}</Portal>;
+      }
+    },
+    [isOpen],
+  );
 
   return { open, close, renderModal };
 };
-
-export default useModal;
