@@ -1,7 +1,8 @@
-import styled, { CSSObject } from "styled-components";
+import styled from "styled-components";
 import { AbsoluteCenter } from "../../style/libStyle";
+import { CustomStyleProps } from "../component.type";
 
-export const Container = styled.div<{ style?: CSSObject }>`
+export const Container = styled.div<CustomStyleProps>`
   min-width: 400px;
   padding: 24px;
   background-color: white;
@@ -22,7 +23,7 @@ export const Container = styled.div<{ style?: CSSObject }>`
   ${({ style }) => style}
 `;
 
-export const Icon = styled.div<{ style?: CSSObject }>`
+export const Icon = styled.div<CustomStyleProps>`
   width: 80px;
   height: 80px;
   border-radius: 16px;
@@ -34,7 +35,7 @@ export const Icon = styled.div<{ style?: CSSObject }>`
   ${({ style }) => style}
 `;
 
-export const Title = styled.h3<{ style?: CSSObject }>`
+export const Title = styled.h3<CustomStyleProps>`
   color: #1c1c1e;
   font-weight: bold;
   margin: 0px;
@@ -54,7 +55,7 @@ export const Content = styled.p`
   font-weight: 400;
 `;
 
-export const ButtonsContainer = styled.div<{ style?: CSSObject }>`
+export const ButtonsContainer = styled.div<CustomStyleProps>`
   width: 100%;
   ${({ style }) => style}
   margin-top : 24px;
